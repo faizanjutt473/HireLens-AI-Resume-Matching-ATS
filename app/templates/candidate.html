@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Candidate portal | HireLens</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="static/css/style.css"></head><body data-page="candidate"><div id="nav"></div>
+<main class="wrap side"><nav><a class="on" href="candidate.html">Overview</a><a href="jobs.html">Find jobs</a><a href="login.html">Log out</a></nav><div>
+<h2>Your applications</h2><div class="stats" style="margin-top:20px"><div class="card"><b id="stApplied">0</b>Applied</div><div class="card"><b id="stShort">0</b>Shortlisted</div><div class="card"><b id="stInt">0</b>Interview stage</div></div>
+<div class="card" style="margin-bottom:20px"><h3 style="margin-bottom:14px">Upload your resume</h3><div class="drop" id="rzone" tabindex="0" role="button" aria-label="Upload resume"><p id="rmsg"><b>Drop your resume here</b> or click to browse</p><p class="muted">PDF or Word (.docx), up to 5 MB</p></div><input id="rfile" type="file" accept=".pdf,.docx" hidden>
+<h3 style="margin:24px 0 8px">Your resumes</h3><div id="resumeList"></div>
+<h3 style="margin:24px 0 10px">Skills we found</h3><div id="skillBox"></div></div>
+<div class="card" style="margin-bottom:20px"><h3 style="margin-bottom:12px">Upcoming interviews</h3><div id="intList"></div></div>
+<div class="card"><h3 style="margin-bottom:12px">Your applications</h3><div id="appList"></div></div></div></main>
+<div id="foot"></div><script src="static/js/app.js"></script><script src="static/js/api.js"></script><script src="static/js/jobs.js"></script><script src="static/js/resumes.js"></script><script src="static/js/applications.js"></script></body></html>

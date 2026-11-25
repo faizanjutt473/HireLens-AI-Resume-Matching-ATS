@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Employer portal | HireLens</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="static/css/style.css"></head><body data-page="employer"><div id="nav"></div>
+<main class="wrap side"><nav><a class="on" href="employer.html">Pipeline</a><a href="jobs.html">Live jobs</a><a href="login.html">Log out</a></nav><div>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px"><h2>Hiring dashboard</h2><button class="btn pri sm" id="openPost">Post a job</button></div>
+<div class="card" style="margin:20px 0"><h3 style="margin-bottom:12px">Your job postings</h3><div id="myJobs"></div></div>
+<div class="card" style="margin-bottom:20px"><h3 style="margin-bottom:12px">Upcoming interviews</h3><div id="upcoming"></div></div>
+<div id="analytics" style="margin-bottom:28px"><h3 style="margin-bottom:12px">Hiring analytics</h3>
+<div class="stats" id="anStats"></div>
+<div class="grid g2">
+<div class="card"><h3 style="margin-bottom:14px">Hiring funnel</h3><div id="anFunnel"></div></div>
+<div class="card"><h3 style="margin-bottom:14px">Applications, last 14 days</h3><div id="anTime"></div></div>
+<div class="card"><h3 style="margin-bottom:14px">Skills your jobs ask for</h3><div id="anYours"></div></div>
+<div class="card"><h3 style="margin-bottom:14px">Skills in demand on HireLens</h3><div id="anMarket"></div></div>
+<div class="card"><h3 style="margin-bottom:14px">Skills your applicants have</h3><div id="anApp"></div></div>
+<div class="card"><h3 style="margin-bottom:14px">Time-to-hire by job</h3><div id="anJobs"></div></div>
+</div></div>
+<div id="pipeEmpty" class="empty" hidden><h3>Your pipeline will appear here</h3><p class="muted">Post a job and applicants will show up as soon as candidates apply.</p></div>
+<div id="pipeWrap" hidden>
+<div class="field" style="max-width:420px"><label for="pipeJob">Show applicants for</label><select id="pipeJob"></select></div>
+<div class="stats"><div class="card"><b id="stTotal">0</b>Applicants</div><div class="card"><b id="stShort">0</b>Shortlisted or beyond</div><div class="card"><b id="stHired">0</b>Hired</div><div class="card"><b id="stAvg">-</b>Average time-to-hire</div></div>
+<div class="board" id="board" style="grid-template-columns:repeat(5,minmax(230px,1fr))">
+<div class="col" data-stage="applied"><h3>Applied <span class="n muted">0</span></h3><div class="cards"></div></div>
+<div class="col" data-stage="shortlisted"><h3>Shortlisted <span class="n muted">0</span></h3><div class="cards"></div></div>
+<div class="col" data-stage="interview"><h3>Interview <span class="n muted">0</span></h3><div class="cards"></div></div>
+<div class="col" data-stage="hired"><h3>Hired <span class="n muted">0</span></h3><div class="cards"></div></div>
+<div class="col" data-stage="rejected"><h3>Rejected <span class="n muted">0</span></h3><div class="cards"></div></div>
+</div></div></div></main>
+<div class="modal" id="sched"><div class="card" style="max-width:460px"><h3>Schedule interview</h3><p class="muted" id="schedWho" style="margin:6px 0 16px"></p><form id="schedForm" novalidate>
+<div class="field"><label for="idt">Date and time</label><input id="idt" type="datetime-local" required></div>
+<div class="field"><label for="idur">Duration (minutes)</label><input id="idur" type="number" min="15" max="240" step="15" value="45"></div>
+<div class="field"><label for="iloc">Meeting link or location</label><input id="iloc" required placeholder="Google Meet link or office address"></div>
+<div class="field"><label for="inote">Note for the candidate (optional)</label><textarea id="inote" rows="3"></textarea></div>
+<div style="display:flex;gap:10px"><button class="btn pri sm">Send invitation</button><button type="button" class="btn sm" data-close>Cancel</button></div></form></div></div>
+<div class="modal" id="postJob"><div class="card" style="max-width:520px;max-height:90vh;overflow:auto"><h3>Post a job</h3><form id="jobForm" novalidate style="margin-top:16px">
+<div class="field"><label for="jt">Job title</label><input id="jt" required placeholder="e.g. Machine Learning Engineer"></div>
+<div class="field"><label for="jl">Location</label><input id="jl" placeholder="e.g. Islamabad or Remote"></div>
+<div class="field"><label for="jy">Job type</label><select id="jy"><option>Full-time</option><option>Part-time</option><option>Contract</option><option>Internship</option></select></div>
+<div class="field"><label for="jx">Experience level</label><select id="jx"><option value="">Not specified</option><option>Entry</option><option>Mid</option><option>Senior</option><option>Lead</option></select></div>
+<div class="field"><label for="js">Required skills (comma separated)</label><input id="js" placeholder="Python, Flask, PostgreSQL"></div>
+<div class="field"><label for="jd">Description</label><textarea id="jd" rows="5" required placeholder="What will this person work on? (at least 20 characters)"></textarea></div>
+<div style="display:flex;gap:10px"><button class="btn pri sm">Publish job</button><button type="button" class="btn sm" data-close>Cancel</button></div></form></div></div>
+<div id="foot"></div><script src="static/js/app.js"></script><script src="static/js/api.js"></script><script src="static/js/jobs.js"></script><script src="static/js/pipeline.js"></script><script src="static/js/analytics.js"></script></body></html>
